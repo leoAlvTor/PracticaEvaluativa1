@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_registro">
 
+    <fragment
+        android:id="@+id/fragment_registro"
+        android:name="ec.edu.ups.practicaevaluativa1.FragmentRegistro"
+        android:label="fragment_registro"
+        tools:layout="@layout/fragment_registro" >
+        <action
+            android:id="@+id/action_fragment_registro_to_fragment_login"
+            app:destination="@id/fragment_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="ec.edu.ups.practicaevaluativa1.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_about"
+            app:destination="@id/fragment_about" />
+        <action
+            android:id="@+id/action_fragment_login_to_fragmentInicio"
+            app:destination="@id/fragmentInicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_about"
+        android:name="ec.edu.ups.practicaevaluativa1.fragment_about"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/fragmentInicio"
+        android:name="ec.edu.ups.practicaevaluativa1.FragmentInicio"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
 </navigation>

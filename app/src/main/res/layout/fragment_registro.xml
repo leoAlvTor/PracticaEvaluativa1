@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment_registro">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="nombre"
+            type="String" />
+        <variable
+            name="direccion"
+            type="String" />
+        <variable
+            name="password"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".FragmentRegistro">
 
-</FrameLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:useDefaultMargins="true"
+            >
+            <TextView
+                android:id="@+id/lbl_nombre"
+                android:text="Nombre:"/>
+
+            <EditText
+                android:id="@+id/txt_nombre"
+                android:text="@={nombre}"/>
+
+            <TextView
+                android:id="@+id/lbl_direccion"
+                android:text="Direccion:"/>
+
+            <EditText
+                android:id="@+id/txt_direccion"
+                android:text="@={direccion}"/>
+
+            <TextView
+                android:id="@+id/lbl_telefono"
+                android:text="Password:"/>
+
+            <EditText
+                android:id="@+id/txt_telefono"
+                android:text="@={password}"/>
+
+            <Button
+                android:id="@+id/btn_registrar"
+                android:text="Registrarme"/>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
